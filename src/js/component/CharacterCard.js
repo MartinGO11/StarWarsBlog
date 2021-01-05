@@ -31,6 +31,18 @@ export class CharacterCard extends React.Component {
 										Hair Color: {""}
 										{this.props.character.hair_color}
 										<br />
+										Skin Color: {""}
+										{this.props.character.skin_color}
+										<br />
+										Eye color: {""}
+										{this.props.character.eye_color}
+										<br />
+										Birth Year: {""}
+										{this.props.character.birth_year}
+										<br />
+										Gender: {""}
+										{this.props.character.gender}
+										<br />
 									</p>
 									<Link to={`/details/${this.props.index + 1}`}>
 										<a href="#" className="btn btn-primary">

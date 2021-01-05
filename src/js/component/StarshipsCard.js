@@ -18,8 +18,24 @@ export class StarshipCard extends React.Component {
 								<div className="card-body">
 									<h5 className="card-title">{this.props.starship.name}</h5>
 									<p className="card-text">
-										Some quick example text to build on the card title and make up the bulk of the
-										cards content.
+										Model: {""}
+										{this.props.starship.model}
+										<br />
+										Manufacturer: {""}
+										{this.props.starship.manufacturer}
+										<br />
+										Cost: {""}
+										{this.props.starship.cost_in_credit}
+										<br />
+										Max Speed: {""}
+										{this.props.starship.max_atmosphering_speed}
+										<br />
+										Consumables: {""}
+										{this.props.starship.consumables}
+										<br />
+										Starship class: {""}
+										{this.props.starship.starship_class}
+										<br />
 									</p>
 									<Link to={`/details/${this.props.index + 1}`}>
 										<a href="#" className="btn btn-primary">

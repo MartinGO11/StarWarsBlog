@@ -18,8 +18,30 @@ export class PlanetCard extends React.Component {
 								<div className="card-body">
 									<h5 className="card-title">{this.props.planet.name}</h5>
 									<p className="card-text">
-										Some quick example text to build on the card title and make up the bulk of the
-										cards content.
+										Rotation: {""}
+										{this.props.planet.rotation_period}
+										<br />
+										Orbital: {""}
+										{this.props.planet.orbital_period}
+										<br />
+										Diametro: {""}
+										{this.props.planet.diameter}
+										<br />
+										Climate: {""}
+										{this.props.planet.climate}
+										<br />
+										Gravity: {""}
+										{this.props.planet.gravity}
+										<br />
+										Terrain: {""}
+										{this.props.planet.terrain}
+										<br />
+										Surface water: {""}
+										{this.props.planet.surface_water}
+										<br />
+										Population: {""}
+										{this.props.planet.population}
+										<br />
 									</p>
 									<Link to={`/details/${this.props.index + 1}`}>
 										<a href="#" className="btn btn-primary">
