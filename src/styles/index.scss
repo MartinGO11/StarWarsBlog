@@ -1,3 +1,21 @@
 /* 
     General Styles
+
+
 */
+.top-container{
+    width: 100px;
+    height: 100px;
+    background-color: beige; 
+    margin: 0;
+    display: inline-block; 
+
+}
+
+.navbar{
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    display: inline-flex;
+    float: left;
+}

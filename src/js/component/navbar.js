@@ -1,16 +1,42 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
+	const [isOpen, setIsOpen] = useState();
+	const handleClick = () => {};
+
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light ">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<span className="navbar-brand mb-0 h1">
+					<img
+						alt
+						StarWars
+						src="https://img.pngio.com/star-wars-logo-transparent-png-stickpng-star-wars-logo-transparent-400_400.png"
+					/>
+				</span>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
+				{/* //setIsOpen is passing a callback function !isOpen so it can perform the opposite of its current state  */}
+				<button className="btn btn-primary" onClick={() => setIsOpen(!isOpen)}>
+					Favoritos <span className="badge badge-secondary">{store.favorites.length}</span>
+				</button>
+
+				{/* //ternary condition (if dropdown is open then d-block if not d-none) */}
+				<div className={isOpen ? "d-block" : "d-none"}>
+					{store.favorites.map((item, index) => {
+						return (
+							<li key={index}>
+								{item}
+								<button onClick={() => actions.deleteFavorite(index)}>
+									<i className="fas fa-times" />
+								</button>
+							</li>
+						);
+					})}
+				</div>
 			</div>
 		</nav>
 	);
